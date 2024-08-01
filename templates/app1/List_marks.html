@@ -1,0 +1,24 @@
+{%extends "app1/base.html"%}
+{%block content%}
+<table class="table table-bordered table-primary caption-top">
+    <caption>Edit Marks </caption>
+    <tr>
+        <th>Rollno</th>
+        <th>Name</th>
+        <th>Subject1</th>
+        <th>Subject2</th>
+        <th>Subject3</th>
+        <th>Operation</th>
+    </tr>
+{%for stud in marks_data%}
+<tr>
+    <td>{{stud.rollno}}</td>
+    <td>{{stud.name}}</td>
+    <td>{{stud.subject1}}</td>
+    <td>{{stud.subject2}}</td>
+    <td>{{stud.subject3}}</td>
+    <td><a class="btn btn-primary" href="{%url 'edit' stud.id%}">Edit</a></td>
+</tr>
+{%endfor%}
+</table>
+{%endblock%}

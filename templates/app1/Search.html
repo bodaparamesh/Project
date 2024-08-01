@@ -1,0 +1,27 @@
+{%extends "app1/base.html"%}
+{%block content%}
+<form action="{%url 'find'%}">
+<table class="table table-bordered table-primary caption-top">
+    <caption>Searching Student</caption>
+    <tr>
+        <td>Rollno</td>
+        <td><input type="number" name="rollno"></td>
+    </tr>
+    </table>
+    <input type="submit" class="btn btn-primary" value="Search">
+</form>
+{%if found%}
+
+<table class="table table-bordered table-primary caption-top">
+<tr>
+    <td>{{stud.rollno}}</td>
+    <td>{{stud.name}}</td>
+    <td>{{stud.subject1}}</td>
+    <td>{{stud.subject2}}</td>
+    <td>{{stud.subject3}}</td>
+</tr>
+</table>
+{%else%}
+<h2&>{{msg}}</h2>
+{% endif %}
+{%endblock%}
